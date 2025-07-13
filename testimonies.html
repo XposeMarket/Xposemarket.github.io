@@ -1,0 +1,140 @@
+<script type="text/html">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xpose Market | Our Testimonies</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Brand colors -->
+  <style>
+    :root {
+      --brand-blue: #003d6d; /* navy from logo */
+      --brand-orange: #f28c1c; /* orange from logo */
+    }
+  </style>
+</head>
+<body class="bg-white font-sans leading-relaxed text-slate-800">
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="sticky top-0 bg-white shadow-sm z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Brand Text Logo -->
+      <a href="index.html#intro" class="flex items-center gap-1 select-none" aria-label="Xpose Market">
+        <span class="text-[var(--brand-blue)] font-extrabold text-2xl tracking-tight">Xpose</span>
+        <span class="text-[var(--brand-orange)] font-extrabold text-2xl tracking-tight">Market</span>
+      </a>
+      <!-- Navigation -->
+      <nav>
+        <ul class="flex gap-4 items-center text-[17px] font-medium">
+          <li><a href="index.html#intro" class="hover:text-[var(--brand-blue)] transition-colors">Introduction</a></li>
+          <li><a href="index.html#services" class="hover:text-[var(--brand-blue)] transition-colors">Services</a></li>
+          <li><a href="index.html#contact" class="hover:text-[var(--brand-blue)] transition-colors">Inquiry</a></li>
+          <li><a href="testimonies.html" class="hover:text-[var(--brand-blue)] transition-colors">Our Testimonies</a></li>
+          <!-- Social Links -->
+          <li>
+            <a href="https://www.instagram.com/xposemarket/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-[var(--brand-orange)] transition-colors">
+              <!-- Instagram SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5a4.25 4.25 0 014.25 4.25v8.5a4.25 4.25 0 01-4.25 4.25h-8.5a4.25 4.25 0 01-4.25-4.25v-8.5a4.25 4.25 0 014.25-4.25zm4.25 3a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 1.5a3 3 0 110 6 3 3 0 010-6zm4.75-.75a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/XposeMarket" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="hover:text-[var(--brand-orange)] transition-colors">
+              <!-- X (Twitter) SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 001.98-2.48 9.12 9.12 0 01-2.88 1.1 4.52 4.52 0 00-7.72 4.13 12.84 12.84 0 01-9.31-4.72 4.53 4.53 0 001.4 6.04 4.48 4.48 0 01-2.05-.57v.06a4.52 4.52 0 003.63 4.44 4.49 4.49 0 01-2.04.08 4.53 4.53 0 004.22 3.14A9.05 9.05 0 013 18.41a12.79 12.79 0 006.93 2.03c8.32 0 12.87-6.9 12.87-12.87 0-.2 0-.42-.01-.63A9.22 9.22 0 0023 3z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= COMPANY STORY SECTION ================= -->
+  <section id="company-story" class="py-16 bg-orange-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-8">Our Story</h2>
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+        Xpose Market's creation dates back to 2015 with the creation of a single social media page. Our founder, Raul Feliciano, discovered his passion for digital marketing during the early social media boom. Starting with an Instagram page posting humorous videos and pictures, Raul quickly amassed a following, reaching nearly 20,000 followers in just six months. By engaging with the community and learning sales and promotional tactics, he grew his presence to over 150,000 followers across platforms within a year and a half. Raul saw the shift in the inquiry market going from personal business, to brand inquiries such as clothing brands and other retail shops. 
+  </p>
+ </p>
+<div class="max-w-6xl mx-auto px-6">
+      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+Empowered by his local community, he began to search for ways to help local businesses and brands grow and expand their outreach in a seemingly easy way. Through his career of the restaurant industry to hospitality sales, Raul saw the power of digital marketing to drive business growth, from local shops to clothing brands, laying the foundation for Xpose Market’s mission to empower businesses through strategic marketing.
+
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CLIENT REVIEWS SECTION ================= -->
+  <section id="reviews" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">Client Reviews</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-slate-600 italic mb-4">"Xpose Market’s logo design gave our brand a fresh, memorable look. Their team was a pleasure to work with!"</p>
+          <p class="text-slate-800 font-semibold">- Emily Chen, Retail Owner</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-slate-600 italic mb-4">"Their website creation service boosted our online presence significantly. Highly professional and effective."</p>
+          <p class="text-slate-800 font-semibold">- Michael Brown, Restaurant Manager</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-slate-600 italic mb-4">"The ad campaigns crafted by Xpose Market brought in more customers than we ever expected!"</p>
+          <p class="text-slate-800 font-semibold">- Lisa Patel, Startup CEO</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 bg-slate-50 text-center text-sm text-slate-500">
+    © <span id="year"></span> Xpose Market. All rights reserved.
+  </footer>
+
+  <!-- Auto-update year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

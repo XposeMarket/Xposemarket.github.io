@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xpose Market | Services & Pricing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --brand-blue: #003d6d; /* navy from logo */
+      --brand-orange: #f28c1c; /* orange from logo */
+    }
+    .rotate-180 { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="sticky top-0 bg-white shadow-sm z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html#intro" class="flex items-center gap-1 select-none" aria-label="Xpose Market">
+        <span class="text-[var(--brand-blue)] font-extrabold text-2xl tracking-tight">Xpose</span>
+        <span class="text-[var(--brand-orange)] font-extrabold text-2xl tracking-tight">Market</span>
+      </a>
+      <nav>
+        <ul class="flex gap-6 items-center text-[17px] font-medium">
+          <li><a href="index.html#intro" class="hover:text-[var(--brand-blue)] transition-colors">Home</a></li>
+          <li><a href="services.html" class="text-[var(--brand-blue)] font-semibold">Services</a></li>
+          <li><a href="index.html#contact" class="hover:text-[var(--brand-blue)] transition-colors">Inquiry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="text-center py-16 bg-slate-50">
+    <h1 class="text-4xl font-bold text-[var(--brand-blue)]">Our Services & Pricing</h1>
+    <p class="text-lg mt-2 max-w-2xl mx-auto">Transparent pricing designed for local businesses. Pick a plan that fits today and scales with you tomorrow.</p>
+  </section>
+
+  <!-- ================= WEBSITE PLANS ================= -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[var(--brand-blue)] mb-10">Website Creation & Hosting</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- STARTER -->
+        <div class="p-8 bg-white rounded-2xl shadow text-center border border-slate-200">
+          <h3 class="text-xl font-bold">Starter</h3>
+          <p class="text-2xl font-extrabold my-2">$200 Setup + $35/mo</p>
+          <p class="text-sm mb-4">Great for new businesses testing online presence.</p>
+
+          <button aria-expanded="false" data-target="starter-details" class="toggle-btn mt-2 mx-auto inline-flex items-center gap-2 px-4 py-2 bg-[var(--brand-blue)] text-white rounded font-semibold hover:brightness-110 transition">
+            <span>View Details</span>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+          </button>
+
+          <div id="starter-details" class="hidden mt-6 text-slate-700 text-left">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border border-slate-200 bg-white rounded-lg overflow-hidden">
+                <tbody class="divide-y divide-slate-200">
+                  <tr><td class="p-3 font-semibold">Hosting</td><td class="p-3"><code>business.github.io</code> (free hosting)</td></tr>
+                  <tr><td class="p-3 font-semibold">Domain</td><td class="p-3">Not included</td></tr>
+                  <tr><td class="p-3 font-semibold">Premium Domains</td><td class="p-3">Not available</td></tr>
+                  <tr><td class="p-3 font-semibold">Pages Included</td><td class="p-3">Up to 3 pages</td></tr>
+                  <tr><td class="p-3 font-semibold">Updates / Edits</td><td class="p-3">1 edit per month</td></tr>
+                  <tr><td class="p-3 font-semibold">Extra Edits</td><td class="p-3">$30 each</td></tr>
+                  <tr><td class="p-3 font-semibold">Custom Email</td><td class="p-3">Not included</td></tr>
+                  <tr><td class="p-3 font-semibold">SEO</td><td class="p-3">Basic</td></tr>
+                  <tr><td class="p-3 font-semibold">Support Speed</td><td class="p-3">5–7 business days</td></tr>
+                  <tr><td class="p-3 font-semibold">Best For</td><td class="p-3">New businesses</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="p-8 bg-[var(--brand-blue)] text-white rounded-2xl shadow text-center">
+          <h3 class="text-xl font-bold">Professional</h3>
+          <p class="text-2xl font-extrabold my-2">$300 Setup + $60/mo</p>
+          <p class="text-sm mb-4 opacity-95">Best value for small businesses ready to scale.</p>
+
+          <button aria-expanded="false" data-target="pro-details" class="toggle-btn mt-2 mx-auto inline-flex items-center gap-2 px-4 py-2 bg-white text-[var(--brand-blue)] rounded font-semibold hover:bg-slate-100 transition">
+            <span>View Details</span>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+          </button>
+
+          <div id="pro-details" class="hidden mt-6 text-slate-700 text-left">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border border-slate-200 bg-white rounded-lg overflow-hidden">
+                <tbody class="divide-y divide-slate-200">
+                  <tr><td class="p-3 font-semibold">Hosting</td><td class="p-3"><code>businessname.com</code> (standard domain included, up to $20/yr)</td></tr>
+                  <tr><td class="p-3 font-semibold">Premium Domains</td><td class="p-3">Available — client pays extra cost</td></tr>
+                  <tr><td class="p-3 font-semibold">Pages Included</td><td class="p-3">Up to 5 pages</td></tr>
+                  <tr><td class="p-3 font-semibold">Updates / Edits</td><td class="p-3">2 edits per month</td></tr>
+                  <tr><td class="p-3 font-semibold">Extra Edits</td><td class="p-3">$25 each</td></tr>
+                  <tr><td class="p-3 font-semibold">Custom Email</td><td class="p-3">1 email</td></tr>
+                  <tr><td class="p-3 font-semibold">SEO</td><td class="p-3">Enhanced</td></tr>
+                  <tr><td class="p-3 font-semibold">Support Speed</td><td class="p-3">2–3 business days</td></tr>
+                  <tr><td class="p-3 font-semibold">Best For</td><td class="p-3">Small businesses ready to scale</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="p-8 bg-white rounded-2xl shadow text-center border border-slate-200">
+          <h3 class="text-xl font-bold">Premium</h3>
+          <p class="text-2xl font-extrabold my-2">$500 Setup + $120/mo</p>
+          <p class="text-sm mb-4">For growing brands needing full support.</p>
+
+          <button aria-expanded="false" data-target="premium-details" class="toggle-btn mt-2 mx-auto inline-flex items-center gap-2 px-4 py-2 bg-[var(--brand-blue)] text-white rounded font-semibold hover:brightness-110 transition">
+            <span>View Details</span>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
+          </button>
+
+          <div id="premium-details" class="hidden mt-6 text-slate-700 text-left">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border border-slate-200 bg-white rounded-lg overflow-hidden">
+                <tbody class="divide-y divide-slate-200">
+                  <tr><td class="p-3 font-semibold">Hosting</td><td class="p-3"><code>businessname.com</code> (premium support + domain credit)</td></tr>
+                  <tr><td class="p-3 font-semibold">Domain</td><td class="p-3">Includes domain credit up to $50/yr (client pays beyond credit)</td></tr>
+                  <tr><td class="p-3 font-semibold">Premium Domains</td><td class="p-3">Available — client pays extra beyond credit</td></tr>
+                  <tr><td class="p-3 font-semibold">Pages Included</td><td class="p-3">Up to 10 pages</td></tr>
+                  <tr><td class="p-3 font-semibold">Updates / Edits</td><td class="p-3">Unlimited minor edits</td></tr>
+                  <tr><td class="p-3 font-semibold">Extra Edits</td><td class="p-3">$0 (included)</td></tr>
+                  <tr><td class="p-3 font-semibold">Custom Email</td><td class="p-3">Up to 3 emails</td></tr>
+                  <tr><td class="p-3 font-semibold">SEO</td><td class="p-3">Advanced + monthly report</td></tr>
+                  <tr><td class="p-3 font-semibold">Support Speed</td><td class="p-3">Priority (same week)</td></tr>
+                  <tr><td class="p-3 font-semibold">Best For</td><td class="p-3">Growing brands needing full support</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-500 mt-6">* Premium domains (short, highly competitive names) may cost more and are billed to client at registrar price. All plans include responsive design and core performance best‑practices.</p>
+    </div>
+  </section>
+
+  <!-- ================= LOGO CREATION ================= -->
+  <section class="py-16 px-4 bg-slate-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[var(--brand-blue)] mb-10">Logo Design Packages</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white shadow rounded-2xl text-center border border-slate-200">
+          <h3 class="font-semibold">Basic</h3>
+          <p class="text-xl font-bold mt-2">$100</p>
+          <p class="text-sm">1 concept • 2 revisions • PNG/SVG</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded-2xl text-center border border-slate-200">
+          <h3 class="font-semibold">Advanced</h3>
+          <p class="text-xl font-bold mt-2">$200</p>
+          <p class="text-sm">3 concepts • 5 revisions • PNG/SVG</p>
+        </div>
+        <div class="p-6 bg-white shadow rounded-2xl text-center border border-slate-200">
+          <h3 class="font-semibold">Brand Kit</h3>
+          <p class="text-xl font-bold mt-2">$350</p>
+          <p class="text-sm">Final logo • Social kit • Mini brand guide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ADVERTISEMENTS (MONTHLY) ================= -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[var(--brand-blue)] mb-10">Advertisement Plans (Monthly)</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white shadow rounded-2xl border border-slate-200 text-center">
+          <h3 class="font-semibold">Basic Ads</h3>
+          <p class="text-2xl font-bold mt-2">$99/mo</p>
+          <ul class="mt-3 text-sm space-y-1">
+            <li>4 designs/posts per month</li>
+            <li>1 platform (IG or FB)</li>
+            <li>1 round of edits per design</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-[var(--brand-blue)] text-white shadow rounded-2xl text-center">
+          <h3 class="font-semibold">Standard Ads</h3>
+          <p class="text-2xl font-bold mt-2">$199/mo</p>
+          <ul class="mt-3 text-sm space-y-1">
+            <li>8 designs/posts per month</li>
+            <li>Up to 2 platforms</li>
+            <li>Basic campaign guidance</li>
+            <li>Monthly performance recap</li>
+          </ul>
+        </div>
+        <div class="p-6 bg-white shadow rounded-2xl border border-slate-200 text-center">
+          <h3 class="font-semibold">Pro Ads</h3>
+          <p class="text-2xl font-bold mt-2">$399/mo</p>
+          <ul class="mt-3 text-sm space-y-1">
+            <li>12 designs/posts per month</li>
+            <li>Multi‑platform (IG, FB, X)</li>
+            <li>A/B creative testing</li>
+            <li>Detailed monthly report</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-sm text-slate-500 mt-4">* Media ad spend (if running paid ads) is billed directly to the platform and is not included in plan pricing.</p>
+    </div>
+  </section>
+
+  <!-- ================= SOCIAL MEDIA (COMING SOON) ================= -->
+  <section class="py-16 px-4 bg-slate-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-[var(--brand-blue)] mb-3">Social Media Marketing</h2>
+      <p class="max-w-2xl mx-auto opacity-70">🚧 Coming Soon — Our team will handle content creation, posting schedules, and engagement tailored to your brand. Packages will include strategy, calendar planning, and analytics.</p>
+      <a href="index.html#contact" class="inline-block mt-6 px-5 py-3 bg-[var(--brand-orange)] text-white font-semibold rounded-lg hover:brightness-110 transition">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 bg-slate-50 text-center text-sm text-slate-500">
+    © <span id="year"></span> Xpose Market. All rights reserved.
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle handler for all plan detail buttons
+    (function(){
+      const panelIds = ['starter-details','pro-details','premium-details'];
+      const panels = panelIds.map(id => document.getElementById(id));
+      const buttons = document.querySelectorAll('.toggle-btn');
+
+      function setState(show) {
+        panels.forEach(p => p.classList.toggle('hidden', !show));
+        buttons.forEach(btn => {
+          btn.setAttribute('aria-expanded', show ? 'true' : 'false');
+          const label = btn.querySelector('span');
+          if (label) label.textContent = show ? 'Hide Details' : 'View Details';
+          const svg = btn.querySelector('svg');
+          if (svg) svg.classList.toggle('rotate-180', show);
+        });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const anyHidden = panels.some(p => p.classList.contains('hidden'));
+          setState(anyHidden); // if any hidden -> open all, else close all
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+

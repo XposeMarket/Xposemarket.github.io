@@ -16,7 +16,7 @@
 </head>
 <body class="bg-white font-sans leading-relaxed text-slate-800">
   <!-- ================= HEADER / NAV ================= -->
-  <header class="sticky top-0 bg-white shadow-sm z-50">
+ <header class="sticky top-0 bg-white shadow-sm z-50">
   <div class="max-w-6xl mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
       <!-- Brand: logo + name -->
@@ -92,6 +92,7 @@
     </nav>
   </div>
 </header>
+
 
 
   <!-- ================= MAIN CONTENT ================= -->
@@ -186,6 +187,19 @@
     });
   }
 </script>
+<script>
+  // Mobile nav toggle
+  const toggler = document.getElementById('navToggle');
+  const nav = document.getElementById('primaryNav');
+  if (toggler && nav) {
+    toggler.addEventListener('click', () => {
+      const isOpen = !nav.classList.contains('hidden');
+      nav.classList.toggle('hidden', isOpen);
+      toggler.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
+</script>
 
 </body>
 </html>
+

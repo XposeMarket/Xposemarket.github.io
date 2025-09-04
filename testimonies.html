@@ -183,5 +183,18 @@ Drawing from professional experience in the restaurant industry and hospitality 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+        <script>
+  // Mobile nav toggle
+  const toggler = document.getElementById('navToggle');
+  const nav = document.getElementById('primaryNav');
+  if (toggler && nav) {
+    toggler.addEventListener('click', () => {
+      const isOpen = !nav.classList.contains('hidden');
+      nav.classList.toggle('hidden', isOpen);
+      toggler.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
+</script>
+
 </body>
 </html>
